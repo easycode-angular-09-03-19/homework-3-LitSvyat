@@ -6,20 +6,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./car.component.css']
 })
 export class CarComponent implements OnInit {
-  public invisibleRefuel = true;
-  public drive() {
-    if(this.car.fuel <= 5) {
-      this.invisibleRefuel = false;
-      return alert('Нужно заправится!')
-    }
-    
-    this.car.mileage += 100;
-    this.car.fuel -= 10; 
-  }
-  public refuel() {
-    this.car.fuel = 85;
-    this.invisibleRefuel = true;
-  }
   public car = {
     model: "BMW X6",
     mileage: 0,
@@ -37,6 +23,20 @@ export class CarComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+  }
+  public invisibleRefuel = true;
+  public drive() {
+    if(this.car.fuel <= 5) {
+      this.invisibleRefuel = false;
+      return alert('Нужно заправится!')
+    }
+    
+    this.car.mileage += 100;
+    this.car.fuel -= 10; 
+  }
+  public refuel() {
+    this.car.fuel = 85;
+    this.invisibleRefuel = true;
   }
 
 }

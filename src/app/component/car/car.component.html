@@ -2,17 +2,13 @@
 <img src="https://avtokovrik.in.ua/wp-content/uploads/2018/11/BMW-X6-F16-2014.png">
 <h3>Характеристики</h3>
   <ul>
-    <li>{{car.specifications[0]}}</li>
-    <li>{{car.specifications[1]}}</li>
-    <li>{{car.specifications[2]}}</li>
-    <li>{{car.specifications[3]}}</li>
+    <li *ngFor="let item of car.specifications">{{ item }}</li>
   </ul>
 <hr>
 <h3>Состояние</h3>
 <p>{{"Пробег: " + car.mileage}}</p>
 <p>{{"Бензин: " + car.fuel}}</p>
 <p>{{"Объем топливного бака: " + car.fuelTank}}</p>
-
 
 <button (click)= "drive()">Ехать</button>
 <button [class.invisible]="invisibleRefuel" (click) = "refuel()">Заправить</button>
